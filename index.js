@@ -72,15 +72,17 @@ Person.prototype.toString = function(){
 */
 
 function Car(model, milesPerGallon) {
-this.model= model;
+this.model = model;
 this.milesPerGallon = milesPerGallon;
 this.tank = 0;
 this.odometer = 0;
 }
-Car.prototype.fill = function(){
-if(this.tank <=9){
-  this.thank();
+Car.prototype.fill = function(gallons){
+this.tank = this.tank + gallons;
 }
+Car.prototype.drive = function (distance, milesPerGallon){
+  this.odometer = this.odometer + distance;
+  this.tank = this.tank - milesPerGallon;
 }
 
 /*
